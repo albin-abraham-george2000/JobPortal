@@ -1,0 +1,238 @@
+{% extends "particles/base_template.html" %}
+{% load static %}
+
+{% block title %}Add User{% endblock title %}
+
+{% block content %}
+<div class="page-wrapper cardhead">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row">
+                <div class="col">
+                    <h3 class="page-title">Create User</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href='{% url "admin_panel:dashboard" %}'>Dashboard</a></li>
+                        <li class="breadcrumb-item active">User Form</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">User Form</h5>
+                    </div>
+                    <div class="card-body">
+                        <form action="#">
+                            <h5 class="card-title">Personal Information</h5>
+                            <div class="row">
+                                <p>Profile Picture</p>
+                                
+                                <input type="file">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Full Name</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Date of Birth </label>
+                                        <input type="date" class="form-control" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="form-group row">
+                                            <label class="col-form-label col-md-2">Gender</label>
+                                            <div class="col-md-10">
+                                            <select class="form-select">
+                                            <option>-- Select --</option>
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                            <option>Other</option>
+
+                                            </select>
+                                            </div>
+                                            </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <h5 class="card-title">Contact Information</h5>
+                                    <div class="mb-3">
+                                        <label class="form-label">Mobile number</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Email Address</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Postal Address</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Address </label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">State</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">City</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Country</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Postal Code</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Work Experience</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Job Title </label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Company Name</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Location (City, State)</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Start Date</label>
+                                        <input type="date" class="form-control" />
+                                    <div class="mb-3">
+                                        <label class="form-label"> End Date</label>
+                                        <input type="date" class="form-control" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Job Responsibilities and Achievements</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Relevant Skills Utilized</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Educational Qualifications</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Degree </label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Institution Name</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Field of Study</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Graducation date</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Location</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            <h5 class="card-title">Certifications and  Licenses</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Certification/License Name </label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Issusing Organization</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Issue Date and Expiry Date</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            <h5 class="card-title">Languages</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Language Known </label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Proficieny levels</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Professional Memberships</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Organization Name </label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Membership Title</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Duration</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            <h5 class="card-title">Projects</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Project Title</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Description</label>
+                                        <textarea class="form-control" id="jobResponsibilities" rows="3" placeholder="Enter the Project Description"></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Duration</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Technologies Used</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Role and Contributions</label>
+                                        <textarea class="form-control" id="" rows="3" placeholder="Enter the project Contribtions and"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% endblock content %}

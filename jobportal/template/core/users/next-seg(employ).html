@@ -1,0 +1,68 @@
+{% extends 'core/template/layout.html' %}
+{% load static %}
+
+{% block title %}
+EMPOLYMENT
+{% endblock title%}
+
+{% block content %}
+<section class="nearJob">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-5 nearcol">
+				<h1>Your dream Job</h1>
+				<h2 class="text-red">Is Near to You</h2>
+			</div>
+			<div class="col-sm-7 d-none d-md-block">
+				<div class="row">
+					<div class="d-flex w-100">
+						<img class="w-100" src="{% static 'site/images/contact-us/banner.png' %}" alt="Banner">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- /. nearJob -->
+
+<section class="loginForm">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 mx-auto">	
+				<form method="post">
+					{% csrf_token %}
+					<h3 class="text-center">EMPOLYMENT</h3>
+					
+					<div class="latestForm">
+						<!-- firstname input -->
+
+						<div class="text-center">
+                            <div class="d-grid mb-5 ">
+                                <a href='{% url "auth_users:job-seeker-segm" %}' class="btn btn-danger">Job Seeker</a>
+
+                            </div>  
+                        </div>
+						<div class="text-center">
+                            <div class="d-grid mb-5 ">
+                                <a href='{% url "auth_users:empolyer-segm" %}' class="btn btn-danger">Employer</a>
+
+                            </div>   
+                        </div>
+					<!-- /. latestForm -->
+					<!-- Register buttons -->
+				</form>			
+			</div>
+		</div>
+	</div>
+</section>
+<!-- /. contactForm -->
+
+{% endblock content %}
+
+{% block js_block %}
+<script>
+	$('#datepicker').datepicker({
+		uiLibrary: 'bootstrap5'
+	});
+</script>
+{% endblock js_block %}

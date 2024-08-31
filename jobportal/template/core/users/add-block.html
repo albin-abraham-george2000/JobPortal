@@ -1,0 +1,74 @@
+<!-- Skills Section -->
+<div class="py-5">
+    <div class="form-group row">
+        <div class="col-sm-6">
+            <input type="text" name="skill_name" id="skillName" class="form-control" placeholder="Skill Name" required>
+            <h6 class="text-red pt-2">Add Skill</h6>
+        </div>
+        <div class="col-sm-6">
+            <input type="text" name="skill_percentage" id="skillPercentage" class="form-control" placeholder="Skill Percentage" required>
+        </div>
+    </div>
+    <button id="addSkillBtn" class="btn btn-primary">Add Skill</button>
+    <div id="skillsList"></div>
+</div>
+
+<!-- Education Section -->
+<div class="py-5">
+    <div class="form-group row">
+        <div class="col-sm-6">
+            <input type="text" name="degree" id="degree" class="form-control" placeholder="Degree" required>							
+        </div>
+        <div class="col-sm-6">
+            <input type="text" name="institute" id="institute" class="form-control" placeholder="Institute" required>							
+            <h6 class="text-red pt-2">Add Education</h6>
+        </div>
+        <div class="col-sm-6">
+            <input type="date" name="year" id="year" class="form-control" value="" required>					
+        </div>
+    </div>
+    <button id="addEducationBtn" class="btn btn-primary">Add Education</button>
+    <div id="educationList"></div>
+</div>
+
+<!-- Experience Section -->
+<div class="py-5">
+    <div class="form-group row">
+        <div class="col-sm-6">
+            <input type="text" name="company" id="company" class="form-control" placeholder="Company" value="" required>				
+        </div>
+        <div class="col-sm-6">
+            <input type="text" name="designation" id="designation" class="form-control" placeholder="Designation" value="" required>						
+        </div>
+    </div>
+    <button id="addExperienceBtn" class="btn btn-primary">Add Experience</button>
+    <div id="experienceList"></div>
+</div>
+
+<!-- Portfolio Section -->
+<div class="pt-5 pb-3">
+    <div class="form-group row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <input type="text" name="projectname" id="projectName" class="form-control" placeholder="Project Name" required>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6 dropdown-container position-relative">
+                    <select name="start_form" id="startForm" class="form-control">
+                        <option class="start form">Start Form</option>
+                    </select>
+                </div>
+                <div class="col-sm-6 dropdown-container position-relative">
+                    <select name="end_on" id="end-on" class="form-control">
+                        <option class="end on">End On</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <textarea class="form-control" name="project_d" id="projectDescription" rows="4" placeholder="Project Description" required></textarea>
+        </div>
+    </div>
+    <button id="addProjectBtn" class="btn btn-primary">Add Project</button>
+    <div id="portfolioList"></div>
+</div>

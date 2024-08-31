@@ -1,0 +1,62 @@
+<div class="proLinks">
+
+    <div class="d-grid mb-4">
+        <a href="{% url 'auth_users:profile-view'%}" class="btn btn-outline-danger">
+            <i class="fa fa-user me-2" aria-hidden="true"></i> Profile
+        </a>
+    </div>
+    <div class="d-grid mb-4">
+        <a href="#" class="btn btn-outline-danger">
+            <i class="fa fa-key me-2" aria-hidden="true"></i> Experience
+        </a>
+    </div>
+    <div class="d-grid mb-4">
+        <a href="#" class="btn btn-outline-danger">
+            <i class="fa fa-key me-2" aria-hidden="true"></i> Protfolio
+        </a>
+    </div>
+    <div class="d-grid mb-4">
+        <a href="#" class="btn btn-outline-danger">
+            <i class="fa fa-key me-2" aria-hidden="true"></i> Skill
+        </a>
+    </div>
+    <div class="d-grid mb-4">
+        <a href="#" class="btn btn-outline-danger">
+            <i class="fa fa-key me-2" aria-hidden="true"></i> Address
+        </a>
+    </div>
+    <div class="d-grid mb-4">
+        {% if user.jobprofile.is_employer %}
+
+        <a href='{% url "auth_users:job-seeker-segm" %}' class="btn btn-outline-danger mb-3">
+            <i class="fa fa-key me-2" aria-hidden="true"></i> Become a Jobseeker
+        </a>
+        <a href='{% url "auth_users:empolyer-job-panel" %}' class="btn btn-outline-danger">
+            <i class="fa fa-key me-2" aria-hidden="true"></i>Job Panel
+        </a>
+        
+        
+        {% else %}
+        <a href='{% url "auth_users:empolyer-segm" %}' class="btn btn-outline-danger mb-3">
+            <i class="fa fa-key me-2" aria-hidden="true"></i> Become a Employer
+        </a>
+        <a href='#' class="btn btn-outline-danger mb-3">
+            <i class="fa fa-key me-2" aria-hidden="true"></i> Applied Job
+        </a>
+        <a href='#' class="btn btn-outline-danger mb-3">
+            <i class="fa fa-key me-2" aria-hidden="true"></i> Saved Job
+        </a>
+        
+        {% endif %}
+    </div>
+    <div class="d-grid mb-4">
+        <a href="#" class="btn btn-outline-danger">
+            <i class="fa fa-key me-2" aria-hidden="true"></i> Change Password
+        </a>
+    </div>
+    <div class="d-grid mb-4">
+        <a href="forgot-password.html" class="btn btn-outline-danger">
+            <i class="fa fa-sign-out me-2" aria-hidden="true"></i> Logout
+        </a>
+    </div>
+</div>

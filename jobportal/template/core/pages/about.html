@@ -1,0 +1,350 @@
+{% extends "core/template/layout.html" %}
+{% load static %}
+
+
+    {% block title %}
+        About us
+    {% endblock title %}
+
+    {% block content %}
+    
+    <section class="aboutGoal">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6 my-auto">
+                    <h1>Find Your Job And</h1>
+                    <h2 class="text-red">Make Sure Goal</h2>
+                    <form class="form-inline py-4" method="post">
+                        <div class="input-group mb-4 w-75">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                            <input type="search" name="search" id="search" class="form-control" placeholder="Search by Skill,job and Company" value="" required>
+                            <input type="submit" name="searchbtn" class="btn btn-dark rounded-pill" id="searchBtn" value="Search">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-6 d-none d-md-block">
+                    <img class="w-100" src="images/about-us/Firs-banner.png" alt="Banner">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.aboutGoal end here -->
+    
+    <nav class="topbreadcrumb">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="home.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="about-us.html">About us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- /. topbreadcrumb -->
+    <section class="overview">
+        <div class="container-fluid">
+            <div class="row">	
+                <div class="col-sm-5 me-3 m-auto">
+                    <div class="overImg">
+                        <div class="img-card"><img class="w-100" src="images/about-us/Second-banner.png" alt="Banner"></div>
+                    </div>
+                </div>
+                <div class="col-sm-6 pt-md-5 mx-auto pt-sm-0">
+                    <h1>Company <span class="text-red">Overview</span></h1>
+                    <p class="pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Maecenas nisl est, Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc sed do tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <div class="readmores">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum Donec vitae dui eget tellus gravida venenatis. vitae dui eget tellus gravida venenatis.Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc sed 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.overview -->
+    
+    <section class="interJob">
+        <div class="container-fluid">
+            <h1 class="pb-5">Why Choose <span class="text-red">Us ?</span></h1>
+            <div class="row">	
+                <div class="col-sm-3 mb-4">
+                    <div class="interinner">
+                        <div class="daimond-bg"><i class="fa fa-pie-chart" aria-hidden="true"></i></div>
+                        <h2 class="text-red">Trusted Quality</h2>
+                        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor incididunt.....</h4>
+                        <a href="javascript:void(0);">Read More</a>
+                    </div>
+                </div>
+                <div class="col-sm-3 mb-4">
+                    <div class="interinner">
+                        <div class="daimond-bg"><i class="fa fa-building" aria-hidden="true"></i></div>
+                        <h2 class="text-red">Top Companies</h2>
+                        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor incididunt.....</h4>
+                        <a href="javascript:void(0);">Read More</a>
+                    </div>
+                </div>
+                <div class="col-sm-3 mb-4">
+                    <div class="interinner">
+                        <div class="daimond-bg">
+                            <i class="fa-sharp fa-solid fa-money-bill-1"></i>
+                        </div>
+                        <h2 class="text-red">No Extra Charges</h2>
+                        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor incididunt.....</h4>
+                        <a href="javascript:void(0);">Read More</a>
+                    </div>
+                </div>
+                <div class="col-sm-3 mb-4">
+                    <div class="interinner">
+                        <div class="daimond-bg"><i class="fa fa-user" aria-hidden="true"></i></div>
+                        <h2 class="text-red">Internation Job</h2>
+                        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor incididunt.....</h4>
+                        <a href="javascript:void(0);">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.interJob -->
+    
+    <section class="valPart">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="valinner">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <h1 class="text-red">19K +</h1>
+                        <h4>Job Available</h4>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="valinner"> 
+                    <i class="fa-sharp fa-solid fa-pen-to-square"></i>
+                        <h1 class="text-red">15K +</h1>
+                        <h4>CV Submited</h4>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="valinner">
+                        <i class="fa fa-building" aria-hidden="true"></i>
+                        <h1 class="text-red">11K +</h1>
+                        <h4>Companies</h4>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="valinner">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <h1 class="text-red">35 +</h1>
+                        <h4>Appointed To Job</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bgnumber"></div>
+    </section>
+    <!-- /. valPart -->
+    
+    <section class="meetTeam">
+        <div class="container-fluid">
+            <h1>Meet Our <span class="text-red">Team</span></h1>
+            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h4>
+            <div class="row">
+                <div class="col-sm-3 mb-4">
+                    <div class="teams">
+                        <a href="javascript:void(0);"><img src="images/about-us/member1.png" alt="Team" class="teamimage w-100"></a>
+                        <div class="overlay">
+                            <ul class="icons list-inline">
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);">
+                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h3><a href="javascript:void(0);">Belinda</a></h3>
+                    <h4>Web Developer</h4>
+                </div>
+                
+                <div class="col-sm-3 mb-4">
+                    <div class="teams">
+                        <a href="javascript:void(0);"><img src="images/about-us/memeber2.png" alt="Team" class="teamimage w-100"></a>
+                        <div class="overlay">
+                            <ul class="icons list-inline">
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h3><a href="javascript:void(0);">Cristian</a></h3>
+                    <h4>Creative Director</h4>
+                </div>
+                
+                <div class="col-sm-3 mb-4">
+                    <div class="teams">
+                        <a href="javascript:void(0);"><img src="images/about-us/member3.png" alt="Team" class="teamimage w-100"></a>
+                        <div class="overlay">
+                            <ul class="icons list-inline">
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h3><a href="javascript:void(0);">Robert</a></h3>
+                    <h4>Office Manager</h4>
+                </div>
+                
+                <div class="col-sm-3 mb-4">
+                    <div class="teams">
+                        <a href="javascript:void(0);"><img src="images/about-us/member4.png" alt="Team" class="teamimage w-100"></a>
+                        <div class="overlay">
+                            <ul class="icons list-inline">
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h3><a href="javascript:void(0);">Tony Teo</a></h3>
+                    <h4>Support Manager</h4>
+                </div>
+            </div>
+            
+            <div class="row ptMeet">
+                <div class="col-sm-3 mb-4">
+                    <div class="teams">
+                        <a href="javascript:void(0);"><img src="images/about-us/member5.png" alt="Team" class="teamimage w-100"></a>
+                        <div class="overlay">
+                            <ul class="icons list-inline">
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h3><a href="javascript:void(0);">Belinda</a></h3>
+                    <h4>Web Developer</h4>
+                </div>
+                
+                <div class="col-sm-3 mb-4">
+                    <div class="teams">
+                        <a href="javascript:void(0);"><img src="images/about-us/member6.png" alt="Team" class="teamimage w-100"></a>
+                        <div class="overlay">
+                            <ul class="icons list-inline">
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h3><a href="javascript:void(0);">Cristian</a></h3>
+                    <h4>Creative Director</h4>
+                </div>
+                
+                <div class="col-sm-3 mb-4">
+                    <div class="teams">
+                        <a href="javascript:void(0);"><img src="images/about-us/member7.png" alt="Team" class="teamimage w-100"></a>
+                        <div class="overlay">
+                            <ul class="icons list-inline">
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h3><a href="javascript:void(0);">Robert</a></h3>
+                    <h4>Office Manager</h4>
+                </div>
+                
+                <div class="col-sm-3 mb-4">
+                    <div class="teams">
+                        <a href="javascript:void(0);"><img src="images/about-us/member8.png" alt="Team" class="teamimage w-100"></a>
+                        <div class="overlay">
+                            <ul class="icons list-inline">
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0);"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h3><a href="javascript:void(0);">Tony Teo</a></h3>
+                    <h4>Support Manager</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /. meetTeam -->
+    {% endblock content %}

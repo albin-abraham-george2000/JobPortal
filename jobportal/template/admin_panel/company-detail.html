@@ -1,0 +1,166 @@
+{% extends "particles/base_template.html" %}
+{% load static %}
+
+{% block title %}Company detail{% endblock title %}
+
+{% block content %}
+
+<style>
+    .page-wrapper {
+        padding: 20px;
+    }
+    .card-title {
+        margin-bottom: 20px;
+    }
+    .form-section {
+        margin-bottom: 30px;
+    }
+    .form-group label {
+        font-weight: bold;
+    }
+    .icon-link {
+        color: #000;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    .icon-link:hover {
+        color: #007bff;
+    }
+    .icon-link i {
+        margin-right: 8px;
+    }
+    .breadcrumb {
+        background-color: #f8f9fa;
+        padding: 10px 15px;
+        margin-bottom: 20px;
+    }
+    .breadcrumb a {
+        text-decoration: none;
+        color: #007bff;
+    }
+    .breadcrumb-item.active {
+        color: #6c757d;
+    }
+    .card {
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+</style>
+
+<div class="page-wrapper cardhead">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row">
+                <div class="col">
+                    <h3 class="page-title">Company Details</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Company Details</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card p-4">
+                    <div class="card-header">
+                        <h5 class="card-title">Company Information</h5>
+                    </div>
+                    <div class="form-section">
+                        <div class="form-group">
+                            <label for="companyName">Company Name</label>
+                            <p id="companyName">Example Company</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="industrySector">Industry Sector</label>
+                            <p id="industrySector">Technology</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="companyWebsite">Company Website</label>
+                            <p id="companyWebsite"><a href="#" class="icon-link"><i class="fas fa-globe"></i> www.example.com</a></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="companyDescription">Company Description</label>
+                            <p id="companyDescription">This is a sample company description.</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="hqLocation">Headquarters Location</label>
+                            <p id="hqLocation">New York, USA</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="yearEstablished">Year Established</label>
+                            <p id="yearEstablished">2005</p>
+                        </div>
+                    </div>
+                    <div class="card-header">
+                        <h5 class="card-title">Contact Information</h5>
+                    </div>
+                    <div class="form-section">
+                        <div class="form-group">
+                            <label for="contactName">Contact Person Name</label>
+                            <p id="contactName">John Doe</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactJobTitle">Contact Person Job Title</label>
+                            <p id="contactJobTitle">CEO</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Contact Email</label>
+                            <p id="contactEmail"><a href="mailto:john@example.com" class="icon-link"><i class="fas fa-envelope"></i> john@example.com</a></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactPhone">Contact Phone Number</label>
+                            <p id="contactPhone"><a href="tel:+1234567890" class="icon-link"><i class="fas fa-phone"></i> +1 234-567-890</a></p>
+                        </div>
+                    </div>
+                    <div class="card-header">
+                        <h5 class="card-title">Business Details</h5>
+                    </div>
+                    <div class="form-section">
+                        <div class="form-group">
+                            <label for="businessRegNumber">Business Registration Number</label>
+                            <p id="businessRegNumber">123456789</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="vatNumber">VAT/Tax Number</label>
+                            <p id="vatNumber">VAT1234567</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="annualRevenue">Annual Revenue Range</label>
+                            <p id="annualRevenue">$1M - $5M</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="numEmployees">Number of Employees</label>
+                            <p id="numEmployees">200</p>
+                        </div>
+                    </div>
+                    <div class="card-header">
+                        <h5 class="card-title">Social Media Profiles</h5>
+                    </div>
+                    <div class="form-section">
+                        <div class="form-group">
+                            <label for="linkedinProfile">LinkedIn Profile</label>
+                            <p id="linkedinProfile"><a href="#" class="icon-link"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="facebookPage">Facebook Page</label>
+                            <p id="facebookPage"><a href="#" class="icon-link"><i class="fab fa-facebook"></i> Facebook</a></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="twitterHandle">Twitter Handle</label>
+                            <p id="twitterHandle"><a href="#" class="icon-link"><i class="fab fa-twitter"></i> @example</a></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="instagramProfile">Instagram Profile</label>
+                            <p id="instagramProfile"><a href="#" class="icon-link"><i class="fab fa-instagram"></i> Instagram</a></p>
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <a href="#" class="btn btn-primary">Edit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{
+    "success_login": {
+      "type": "success",
+      "code": 200,
+      "message": "Login successful. Welcome back, [username]!"
+    },
+    "incorrect_password": {
+      "type": "error",
+      "code": 401,
+      "message": "Login failed. The username and/or password is incorrect."
+    },
+    "user_not_found": {
+      "type": "error",
+      "code": 404,
+      "message": "Login failed. The username you entered does not exist."
+    },
+    "password_reset_request": {
+      "type": "info",
+      "code": 200,
+      "message": "A password reset link has been sent to your registered email address."
+    },
+    "password_reset_successful": {
+      "type": "success",
+      "code": 200,
+      "message": "Your password has been successfully reset. You can now log in with your new password."
+    },
+    "token_expired": {
+      "type": "error",
+      "code": 400,
+      "message": "Password reset failed. The reset link has expired. Please request a new password reset."
+    },
+    "invalid_token": {
+      "type": "error",
+      "code": 400,
+      "message": "Password reset failed. The reset link is invalid. Please request a new password reset."
+    },
+    "account_locked": {
+      "type": "error",
+      "code": 403,
+      "message": "Your account has been locked due to multiple unsuccessful login attempts. Please contact support to unlock your account."
+    },
+    "account_activation_required": {
+      "type": "info",
+      "code": 403,
+      "message": "Your account has not been activated yet. Please check your email for the activation link."
+    },
+    "general_error": {
+      "type": "error",
+      "code": 500,
+      "message": "An unexpected error occurred. Please try again later."
+    }
+  }

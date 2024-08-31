@@ -1,0 +1,84 @@
+{% extends 'core/template/layout.html' %}
+{% load static %}
+
+{% block title %}
+Create a job
+{% endblock title%}
+
+{% block content %}
+<section class="stillGot">
+	<div class="container-fluid">
+		<div class="row text-center">
+			<div class="col-sm-12 mx-auto">
+				<h2>Post Your <span class="text-red"> Job</span></h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<form method="post">
+				    {% csrf_token %}
+					<div class="row">
+						<div class="col-sm-12 form-group">
+							<label >{{form.job_title.label}}</label>
+							{{form.job_title}}
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6  form-group position-relative">
+							<label >{{form.job_category.label}}</label>
+							{{form.job_category}}
+						</div>
+						<div class="col-sm-6 form-group dropdown-container position-relative">
+							<label >{{form.location.label}}</label>
+							{{form.location}}
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12 form-group">
+							<label >{{form.salary_package.label}}</label>
+							{{form.salary_package}}
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6 form-group">
+							<label >{{form.vacancies.label}}</label>
+							{{form.vacancies}}
+						</div>
+						<div class="col-sm-6 form-group dropdown-container position-relative">
+							<label >{{form.job_type.label}}</label>
+							{{form.job_type}}
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-3  form-group position-relative">
+							<label >{{form.experience.label}}</label>
+							{{form.experience}}
+						</div>
+						<div class="col-sm-3  form-group position-relative">
+							<label >{{form.gender.label}}</label>
+							{{form.gender}}
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							{{form.job_description.label}}
+							<br>
+                            {{form.media}}
+                            {{form.job_description}}
+						</div>
+					</div>
+					<div class="row pt-4">
+						<div class="col-sm-12 form-group">
+							<div class="d-grid">
+							<button type="submit" name="submit" class="btn btn-danger btn-block" id="post">Post Your Job</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- /. stillGot -->
+
+{% endblock content %}

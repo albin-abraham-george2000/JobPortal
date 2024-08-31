@@ -1,0 +1,71 @@
+{% extends 'core/template/layout.html' %}
+{% load static %}
+
+{% block title %}
+Signup
+{% endblock title %}
+
+{% block content %}
+<section class="nearJob">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-5 nearcol">
+				<h1>Your dream Job</h1>
+				<h2 class="text-red">Is Near to You</h2>
+			</div>
+			<div class="col-sm-7 d-none d-md-block">
+				<div class="row">
+					<div class="d-flex w-100">
+						<img class="w-100" src="{% static 'site/images/contact-us/banner.png' %}" alt="Banner">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- /. nearJob -->
+
+<section class="loginForm">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 mx-auto">	
+				<form method="post">
+					{% csrf_token %}
+					<h3 class="text-center">REGISTRATION</h3>
+					
+					<div class="latestForm">
+					{% include 'component/formfield.html' with field=form.full_name %}
+					{% include 'component/formfield.html' with field=form.username %}
+					{% include 'component/formfield.html' with field=form.email %}
+					{% include 'component/formfield.html' with field=form.mobile_number %}
+					{% include 'component/formfield.html' with field=form.password %}
+					{% include 'component/formfield.html' with field=form.password2 %}
+					</div> 
+					<!-- /. latestForm -->
+					<!-- Submit button -->
+					<div class="d-grid">
+						<input type="submit" name="submit" class="btn btn-danger mb-4" id="register" value="Register Now">
+					</div>
+					<!-- Register buttons -->
+					<div class="text-center"> 
+						<p>Have't Any Account Yet? <a class="clickHere" href="login.html">Click Here</a></p>
+						<p>or</p>
+						<p>Login With Social</p>
+						<a href="javascript:void(0);" class="btn btn-danger btn-floating rounded-pill mx-2">
+						  <i class="fa fa-google me-1"></i> Google
+						</a>
+						<a href="javascript:void(0);" class="btn btn-primary rounded-pill btn-floating mx-2">
+						  <i class="fa fa-facebook me-1"></i> Facebook
+						</a>
+						<a href="javascript:void(0);" class="btn btn-info rounded-pill btn-floating mx-2 text-white">
+						  <i class="fa fa-twitter me-1"></i> Twitter
+						</a>
+					</div>
+				</form>			
+			</div>
+		</div>
+	</div>
+</section>
+<!-- /. contactForm -->
+
+{% endblock content %}

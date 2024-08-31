@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+	<title>{% block title %} {% endblock title %}</title>
+	<meta charset="utf-8">
+	<meta name="csrf-token" content="{{ csrf_token }}">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Stylesheet -->
+	<link rel="stylesheet" type="text/css" href="{% static 'site/css/stylesheet.css' %}">
+	<!-- Bootstrap 5.3 link -->
+	<link href="{% static 'site/assets/js/bootstrap5.3/css/bootstrap.min.css' %}" rel="stylesheet">	
+	<!-- Font-family -->	
+	<link href="{% static 'site/assets/font/raleway/style.css' %}" rel="stylesheet">	
+	<link href="{% static 'site/assets/font/rubik/style.css' %}" rel="stylesheet">
+	<!-- Font-awesome link -->
+	<link rel="stylesheet" type="text/css" href="{% static 'site/assets/fonts/fontawesome/css/all.min.css' %}">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+{% block css_block%}
+
+
+{% endblock css_block%}
+<body>
+{% include 'core/template/navbar.html'%}
+{% if messages %}
+                <div class="messages" id='pophover'>
+                    {% for m in messages %}
+                    <div class="alert alert-{{ m.tags }}">
+                        {{ m }}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+				
+
+{% block content %}
+
+{% block shared_sidebar %}
+
+
+{% endblock shared_sidebar %}
+
+{% endblock content %}
+
+
+<!-- footer start here -->
+<footer id="footer">
+	<!-- <svg viewBox="0 0 1440 250">
+	  <path fill="#fff" fill-opacity="1" d="M0,96L120,122.7C240,149,480,203,720,202.7C960,203,1200,149,1320,122.7L1440,96L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path>
+	</svg> -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3">
+				<a href="home.html">
+					<img src="{% static 'site/images/home/jobLogo-footer.png' %}" alt="Logo" title="Logo">
+				</a>
+				<div class="footer_inner">
+					<p class="w-90">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+						eiusmod tempor incididunt ut<br>labore et dolore accumsan lacus <br> vel facilisis.
+					</p>
+				</div>
+			</div>
+			<div class="col-sm-2 mx-auto">
+				<h5>Usefull Links</h5>
+				<div class="footer_inner">
+					<ul class="list-unstyled">
+						<li><a href="about-us.html">About Us</a></li>
+						<li><a href="contact-us.html">Contact Us</a></li>
+						<li><a href="javascript:void(0);">Services</a></li>
+						<li><a href="javascript:void(0);">News & Blog </a></li>
+						<li><a href="javascript:void(0);">Our features</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<h5>Contact Us</h5>
+				<div class="footer_inner">
+					<div class="d-flex media">
+						<i class="fa fa-map-marker" aria-hidden="true"></i>
+						<div class="media-body"><p> <span class="f_rubik">456,</span> tredy Road, New york <br> USA, MD <span class="f_rubik">210093</span> </p></div>
+					</div>
+					<div class="d-flex media">
+						<i class="fa-regular fa-envelope"></i>
+						<div class="media-body"><p>hr@gmail.com</p></div>
+					</div>
+					<div class="d-flex media">
+						<i class="fa fa-phone" aria-hidden="true"></i>
+						<div class="media-body"><p class="f_rubik">+61-5869259325</p></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<h5>Get In Touch</h5>
+				<div class="footer_inner">
+					<form class="form-inline valid" method="post">
+						<div class="input-group mb-4">
+								<input type="email" name="email" class="form-control" id="email" 	placeholder="E-mail Address" value="" required>
+								<button class="btn btn-white" name="submit" type="submit" id="submit">
+									<i class="fa-regular fa-paper-plane"></i>
+								</button>
+						</div>
+					</form>
+					<ul class="list-inline">
+						<li class="list-inline-item"><a href="javascript:void(0);"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li class="list-inline-item"><a href="javascript:void(0);"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+						<li class="list-inline-item"><a href="javascript:void(0);"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+						<li class="list-inline-item"><a href="javascript:void(0);"> 
+						<i class="fa-brands fa-youtube"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- footer end here -->
+<!-- Js Links -->
+<script src="{% static 'site/assets/js/bootstrap5.3/js/popper.min.js' %}"></script>
+<script src="{% static 'site/assets/js/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'site/assets/js/bootstrap5.3/js/bootstrap.bundle.min.js' %}"></script>
+<script>
+    $(document).ready(function() {
+        $('#notifications').click(function(event) {
+            event.preventDefault(); // Prevent the default anchor behavior
+
+            $.ajax({
+                url: '{% url "auth_users:mark_as_read" %}',
+                type: 'GET',
+                success: function(response) {
+				
+                },
+                error: function(xhr, status, error) {
+                    alert('Error: ' + xhr.responseJSON.error);
+                }
+            });
+        });
+    });
+	$(document).ready(function(){
+		setTimeout(function() {
+			$('#pophover').addClass('d-none');
+		}, 2000); 
+	});
+
+</script>
+
+{% block js_block %}
+
+{% endblock js_block %}
+
+
+<!-- More function here -->
+</body>

@@ -1,0 +1,130 @@
+{% extends "particles/base_template.html" %}
+{% load static %}
+
+{% block title  %} Add Job{% endblock title  %}
+
+{% block content %}
+
+<div class="page-wrapper">
+    <div class="content">
+        <div class="row">
+
+            <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Job Details Form</h5>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <!-- Company/Organization Information -->
+                        <div class="form-section">
+                            <h5 class="card-title">Company/Organization Information</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Company/Organization Name</label>
+                                        <input type="text" class="form-control" id="companyName" placeholder="Enter the company/organization name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Industry Sector</label>
+                                        <input type="text" class="form-control" id="industrySector" placeholder="Enter the industry sector">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Job Details -->
+                        <div class="form-section">
+                            <h5 class="card-title">Job Details</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Job Title</label>
+                                        <input type="text" class="form-control" id="jobTitle" placeholder="Enter the job title">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Job Description</label>
+                                        <textarea class="form-control" id="jobDescription" rows="3" placeholder="Enter the job description"></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Job Responsibilities</label>
+                                        <textarea class="form-control" id="jobResponsibilities" rows="3" placeholder="Enter the job responsibilities"></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Key Requirements and Qualifications</label>
+                                        <textarea class="form-control" id="keyRequirements" rows="3" placeholder="Enter key requirements and qualifications"></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Experience Level</label>
+                                        <input type="text" class="form-control" id="experienceLevel" placeholder="Enter the experience level">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Education Level</label>
+                                        <input type="text" class="form-control" id="educationLevel" placeholder="Enter the education level">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Employment Type</label>
+                                        <select class="form-control" id="employmentType">
+                                            <option>Full-time</option>
+                                            <option>Part-time</option>
+                                            <option>Internship</option>
+                                            <option>Contract</option>
+                                            <option>Temporary</option>
+                                            <option>Freelance</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Job Category/Industry</label>
+                                        <input type="text" class="form-control" id="jobCategory" placeholder="Enter the job category/industry">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Job Location</label>
+                                        <input type="text" class="form-control" id="jobLocation" placeholder="Enter the job location (City, State/Province, Country)">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Remote Work Option</label>
+                                        <select class="form-control" id="remoteOption">
+                                            <option>Yes</option>
+                                            <option>No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Compensation and Benefits -->
+                        <div class="form-section">
+                            <h5 class="card-title">Compensation and Benefits</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Salary Range</label>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <input type="number" class="form-control" id="salaryMin" placeholder="Minimum">
+                                            </div>
+                                            <div class="col">
+                                                <input type="number" class="form-control" id="salaryMax" placeholder="Maximum">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Currency</label>
+                                        <input type="text" class="form-control" id="currency" placeholder="Enter the currency">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Salary Type</label>
+                                        <select class="form-control" id="salaryType">
+                                            <option>Annual</option>
+    </div>
+    </div>
+    </div>
+
+
+{% endblock %}

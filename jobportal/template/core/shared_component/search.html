@@ -1,0 +1,26 @@
+<form class="form-inline" method="get">
+    {% csrf_token %}
+    <div class="input-group mb-4 w-100">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        {{form}}
+        <button type="submit" name="query" class="btn btn-dark rounded-pill" id="searchBtn" >Search</button>
+    </div><!-- input-group -->
+
+    <h2>Job Titles</h2>
+    <ul>
+        {% for job in jobs %}
+            <li>{{ job.title }}</li>
+        {% empty %}
+            <li>No job titles found.</li>
+        {% endfor %}
+    </ul>
+    
+    <h2>Companies</h2>
+    <ul>
+        {% for company in companies %}
+            <li>{{ company.name }}</li>
+        {% empty %}
+            <li>No companies found.</li>
+        {% endfor %}
+    </ul>
+</form>

@@ -1,0 +1,9 @@
+<div class="form-group"> 
+    {{field}} 
+    <label class="form-control-placeholder" for="{{field.label.tag}}">{{field.label}}</label>
+    {% if field.errors %}
+        {% for e in field.errors %}
+            <p class="text-danger">{{ e }}</p>
+        {% endfor %}  
+    {% endif %}
+</div>

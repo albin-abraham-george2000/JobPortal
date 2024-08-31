@@ -1,0 +1,57 @@
+{% extends 'core/template/layout.html' %}
+{% load static %}
+
+{% block title %}
+Employer
+{% endblock title%}
+
+{% block content %}
+
+
+<section class="nearJob">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-5 nearcol">
+				<h1>Your dream Job</h1>
+				<h2 class="text-red">Is Near to You</h2>
+			</div>
+			<div class="col-sm-7 d-none d-md-block">
+				<div class="row">
+					<div class="d-flex w-100">
+						<img class="w-100" src="{% static 'site/images/contact-us/banner.png' %}" alt="Banner">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- /. nearJob -->
+
+<section class="loginForm">
+	<div class="row">
+		<div class="col-sm-6 mx-auto">
+			<form method="post">
+				{% csrf_token %}
+				<h3 class="text-center">EMPOLYER SEGMENT</h3>
+
+				<div class="latestForm">
+
+					<div class="modal-body p-5 pt-0">
+						{% include 'component/formfield.html' with field=form.title %}
+						{% include 'component/formfield.html' with field=form.company %}
+						{% include 'component/formfield.html' with field=form.location %}
+					</div>
+				</div>
+				<!-- Submit button -->
+				<div class="d-grid">
+					<input type="submit" name="submit" class="btn btn-danger mb-4" id="register" value="Submit">
+				</div>
+		</div>
+	</div>
+	</div>
+
+	</form>
+	</div>
+	</div>
+</section>
+{% endblock content %}

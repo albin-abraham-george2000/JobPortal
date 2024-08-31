@@ -1,0 +1,148 @@
+{% extends "particles/base_template.html" %}
+{% load static %}
+
+{% block title %}Add Company{% endblock title %}
+
+{% block content %}
+<div class="page-wrapper cardhead">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row">
+                <div class="col">
+                    <h3 class="page-title">Create Company</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href='{% url "admin_panel:dashboard" %}'>Dashboard</a></li>
+                        <li class="breadcrumb-item active">Company Form</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card p-4">
+                    <div class="card-header">
+                        <h5 class="card-title">Add Company</h5>
+                    </div>
+
+                    <form>
+                        <!-- Company Information -->
+                        <div class="form-section">
+                            <h5 class="card-title">Company Information</h5>
+                            <div class="form-group">
+                                <label for="companyName">Company Name</label>
+                                <input type="text" class="form-control" id="companyName" placeholder="Enter the company name">
+                            </div>
+                            <div class="form-group">
+                                <label for="industrySector">Industry Sector</label>
+                                <input type="text" class="form-control" id="industrySector" placeholder="Enter the industry sector">
+                            </div>
+                            <div class="form-group">
+                                <label for="companyWebsite">Company Website</label>
+                                <input type="url" class="form-control" id="companyWebsite" placeholder="Enter the company website">
+                            </div>
+                            <div class="form-group">
+                                <label for="companyDescription">Company Description</label>
+                                <textarea class="form-control" id="companyDescription" rows="3" placeholder="Enter the company description"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="companyLogo">Company Logo</label>
+                                <input type="file" class="form-control-file" id="companyLogo">
+                            </div>
+                            <div class="form-group">
+                                <label for="hqLocation">Headquarters Location</label>
+                                <input type="text" class="form-control" id="hqLocation" placeholder="Enter the headquarters location">
+                            </div>
+                            <div class="form-group">
+                                <label for="yearEstablished">Year Established</label>
+                                <input type="number" class="form-control" id="yearEstablished" placeholder="Enter the year established">
+                            </div>
+                        </div>
+
+                        <!-- Contact Information -->
+                        <div class="form-section">
+                            <h5 class="card-title">Contact Information</h5>
+                            <div class="form-group">
+                                <label for="contactName">Contact Person Name</label>
+                                <input type="text" class="form-control" id="contactName" placeholder="Enter the contact person name">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactJobTitle">Contact Person Job Title</label>
+                                <input type="text" class="form-control" id="contactJobTitle" placeholder="Enter the contact person job title">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">Contact Email</label>
+                                <input type="email" class="form-control" id="contactEmail" placeholder="Enter the contact email">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactPhone">Contact Phone Number</label>
+                                <input type="tel" class="form-control" id="contactPhone" placeholder="Enter the contact phone number">
+                            </div>
+                        </div>
+
+                        <!-- Business Details -->
+                        <div class="form-section">
+                            <h5 class="card-title">Business Details</h5>
+                            <div class="form-group">
+                                <label for="businessRegNumber">Business Registration Number</label>
+                                <input type="text" class="form-control" id="businessRegNumber" placeholder="Enter the business registration number">
+                            </div>
+                            <div class="form-group">
+                                <label for="vatNumber">VAT/Tax Number</label>
+                                <input type="text" class="form-control" id="vatNumber" placeholder="Enter the VAT/Tax number">
+                            </div>
+                            <div class="form-group">
+                                <label for="annualRevenue">Annual Revenue Range</label>
+                                <input type="text" class="form-control" id="annualRevenue" placeholder="Enter the annual revenue range">
+                            </div>
+                            <div class="form-group">
+                                <label for="numEmployees">Number of Employees</label>
+                                <input type="number" class="form-control" id="numEmployees" placeholder="Enter the number of employees">
+                            </div>
+                        </div>
+
+                        <!-- Social Media Profiles (Optional) -->
+                        <div class="form-section">
+                            <h5 class="card-title">Social Media Profiles (Optional)</h5>
+                            <div class="form-group">
+                                <label for="linkedinProfile">LinkedIn Profile</label>
+                                <input type="url" class="form-control" id="linkedinProfile" placeholder="Enter LinkedIn profile URL">
+                            </div>
+                            <div class="form-group">
+                                <label for="facebookPage">Facebook Page</label>
+                                <input type="url" class="form-control" id="facebookPage" placeholder="Enter Facebook page URL">
+                            </div>
+                            <div class="form-group">
+                                <label for="twitterHandle">Twitter Handle</label>
+                                <input type="text" class="form-control" id="twitterHandle" placeholder="Enter Twitter handle">
+                            </div>
+                            <div class="form-group">
+                                <label for="instagramProfile">Instagram Profile</label>
+                                <input type="url" class="form-control" id="instagramProfile" placeholder="Enter Instagram profile URL">
+                            </div>
+                        </div>
+
+                        <!-- Terms and Conditions -->
+                        <div class="form-section">
+                            <h5 class="card-title">Terms and Conditions</h5>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="agreeTerms">
+                                <label class="form-check-label" for="agreeTerms">Agree to Terms and Conditions</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="subscribeNewsletter">
+                                <label class="form-check-label" for="subscribeNewsletter">Subscribe to Newsletter</label>
+                            </div>
+                        </div>
+
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

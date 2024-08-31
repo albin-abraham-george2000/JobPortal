@@ -1,0 +1,402 @@
+{% extends 'core/template/layout.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}Profile{% endblock title %}
+
+{% block css_block %}
+<style>
+
+	.gallery-section #gallery-image {
+		height: 50%;
+		width: 40%;
+	}
+</style>
+
+{% endblock css_block %}
+
+
+{% block content %}
+<section class="profile_banner">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-6 nearJob">
+				<h1>Your dream Job</h1>
+				<h2 class="text-red">Is Near to You</h2>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	<!-- /. profile_banner -->
+
+	<section class="profileMain">
+		
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-3 pe-lg-5">
+					<div class="card mb-2 border-0">
+						<div class="jobImage">
+							<div class="image-card">
+								{% if not user.profile_pic.%}
+									<img src="{% static 'site/images/profile/Default_profile.png' %}" alt="=" class="card-img-top">
+								{% else %}
+								<img class="card-img-top" src="{{user.profile_pic.url}}" alt="Profile">
+								{% endif %}
+							</div>
+						</div>
+						<div class="card-body rgba-blue">
+							<p class="mb-0 text-white"><a href="#">Change Photo</a></p>
+						</div>
+						<div class="card-body mb-4 rbg-blue">
+							<p class="mb-0 text-white"><a href="#" class="view-reel-link" data-videos='["{{ user.short_reel.url }}"]'>View Reel</a></p>
+						</div>
+						<div id="reelVideoModal" class="modal modal-fullscreen fade" tabindex="-1" role="dialog">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-body">
+										<div class="video-container">
+											<video id="reelVideoPlayer" class="w-100" controls>
+												<source src="" type="video/mp4">
+												Your browser does not support the video tag.
+											</video>
+											<div class="nav-section" id="navSection"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					{% block shared_sidebar %}
+					{% include 'core/shared_component/user_sidebar.html'%}
+					{% endblock shared_sidebar %}
+					
+
+				</div><!-- /. grid column -->
+				<div class="col-sm-9 profile_right">
+					{% if user.jobprofile.is_employer %}
+					<div class="profile-section text-end">
+						<a href="{% url 'auth_users:create_job' %}" class="btn btn-danger mb-2">POST A JOB</a>
+					</div>
+					{% endif%}
+					<div class="border p-4">
+						<form method="post">
+							<div class="pb-5">
+								<h3>Personal Information
+									<span class="float-end fx-top">
+										<a href="" class="btn btn-danger">
+											<i class="fa fa-upload me-2" aria-hidden="true"></i> Upload Your CV
+										</a>
+										<a href="javascript:void(0);" class="btn btn-danger">
+											<i class="fa fa-edit me-2" aria-hidden="true"></i> Edit
+										</a>
+									</span>
+								</h3>
+							</div>
+							<div class="form-group row">
+								<div class="col-sm-6">
+									<label class=' md-3 fs-4 text-uppercase '>Full Name</label>
+									<p class="form-control">{{user.full_name}}</p>
+								</div>
+								<div class="col-sm-6">
+									<label class=' md-3 fs-4 text-uppercase'>Age</label>
+									<p class="form-control">{{user.age}}</p>
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col-sm-6">
+									<label class=' md-3 fs-4 text-uppercase'>Date of Birth</label>
+									<p class="form-control">{{user.dob}}</p>
+								</div>
+								<div class="col-sm-6">
+									<label class=' md-3 fs-4 text-uppercase'>Mobile number</label>
+									<p class="form-control">{{user.mobile_number}}</p>
+								</div>
+							</div>
+							<hr>
+							<div class="container">
+								<div class="row">
+									
+							</div>
+							<ul class="nav">
+								<li class="nav-item" >
+									<span class="nav-link ">Hobbies
+									<ul class="p-1">
+										{% for hobby in hobbies %}
+										<li class="badge text-bg-success mt-3 p-2">{{ hobby }}</li>
+										{% endfor %}
+									</span>
+									</ul>
+								</li>
+								<li class="nav-item">
+									<span class="nav-link" >Interest
+										<ul class="p-1">
+											{% for interest in interests %}
+											<li class="badge text-bg-success mt-3 p-2">{{ interest }}</li>
+											{% endfor %}
+										</ul>
+									</span>
+								</li>
+							</ul>
+							<span>Gallery</span>
+							<div class="container-gallery" id="galleryContainer'">
+								<div class="popup popup-1">
+									<img class="img-responsive" alt="Pop Up Gallery" src="{{user.profile_pic.url}}" />
+								</div>
+								<div class="popup popup-2">
+									<img class="img-responsive" alt="Pop Up Gallery" src="" />
+								</div>
+								<div class="popup popup-3">
+									<img class="img-responsive" alt="Pop Up Gallery" src="" />
+								</div>
+								<div class="popup popup-extra">
+									<img class="img-responsive" alt="More" src="" />
+								</div>
+							</div>
+							
+							
+							<div class="modal fade" id="mediumGalleryModal" tabindex="-1" role="dialog" aria-labelledby="mediumGalleryModalLabel" aria-hidden="true">
+								<div class="modal-dialog modal-lg" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="mediumGalleryModalLabel">Gallery</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											<div class="row" id="mediumGalleryContent">
+												<!-- Gallery content will be loaded here -->
+											</div>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-primary" id="addMoreImages">Add More Images</button>
+											<button type="button" class="btn btn-danger" id="editGallery">Edit Gallery</button>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<hr>
+
+							<div class="form-group row">
+								<hr>
+								<div class="col-sm-3 m">
+									{% if user.smoking_habit %}
+										<div class="text-bg-success mb-3 p-3">Drinker</div>
+									{% else %}
+									<div class="text-bg-success  mb-3 p-3 ">Non-Drinker</div>
+								</div>
+								{% endif %}
+								<hr>
+								
+								<div class="col-sm-3 ">
+									{% if user.drinking_habit %}
+										<div class="text-bg-success mb-3 p-3">Smoker</div>
+									{% else %}
+									<div class="text-bg-success mb-3 p-3">Non-Smoker</div>
+								</div>
+								{% endif %}
+							</div>
+							<div class="form-group ">
+								
+								</div>
+								<div class="col-sm-6 dropdown-container position-relative">
+									<label >Skill</label>
+									<select >
+										<option value="">-----</option>
+										<option value="">HTML</option>
+										<option value="">PYTHON</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<textarea class="form-control" name="aboutme" rows="10" placeholder="About Me"
+									required></textarea>
+							</div>
+
+							<!-- /. Personal Information -->
+							<h3 class="pt-5">Address
+								<div >
+									<span class="float-end">
+										<a href="javascript:void(0);" class="btn btn-danger">
+											<i class="fa fa-edit me-2" aria-hidden="true"></i> Edit
+										</a>
+									</span>
+									<span class="float-end">
+										<a id="add-address-button" onclick="addAddressFields()" class="btn btn-danger">
+											<i class="fa fa-save me-2" aria-hidden="true" ></i> Save
+										</a>
+									</span>
+								</div>
+								
+							</h3>
+
+							<div class="form-group row">
+								<div class="py-5" id="form-container">
+								<div class="col-sm-6">
+									<h6 class="btn btn-link text-decoration-none text-red pt-2" id="add-address-button" onclick="addAddressFields()">Add Address</h6>
+									
+								</div>
+							</div>
+							</div>
+							
+							<!-- /. Skills -->
+
+							<h3>Education
+								<span class="float-end">
+									<a href="javascript:void(0);" class="btn btn-danger">
+										<i class="fa fa-edit me-2" aria-hidden="true"></i> Edit
+									</a>
+								</span>
+							</h3>
+
+							<div class="py-5">
+								<div class="form-group row">
+									<div class="col-sm-6">
+										<input type="text" name="title" id="title" class="form-control"
+											placeholder="Tittle" value="" required>
+									</div>
+									<div class="col-sm-6">
+										<input type="text" name="degree" id="degree" class="form-control"
+											placeholder="Degree" value="" required>
+									</div>
+								</div>
+								<div class="form-group row">
+									<div class="col-sm-6">
+										<input type="text" name="institute" id="institute" class="form-control"
+											placeholder="Institute" value="" required>
+										<h6 class=" btn btn-link text-decoration-none text-red pt-2">Add Education</h6>
+									</div>
+									<div class="col-sm-6">
+										<input type="date" name="year" id="year" class="form-control" value="" required>
+									</div>
+								</div>
+							</div>
+							<!-- /. Education -->
+
+							<h3>Experince
+								<span class="float-end">
+									<a href="javascript:void(0);" class="btn btn-danger">
+										<i class="fa fa-edit me-2" aria-hidden="true"></i> Edit
+									</a>
+								</span>
+							</h3>
+
+							<div class="py-5">
+								<div class="form-group row">
+									<div class="col-sm-6">
+										<input type="text" name="company" id="company" class="form-control"
+											placeholder="Company" value="" required>
+									</div>
+									<div class="col-sm-6">
+										<input type="text" name="designation" id="designation" class="form-control"
+											placeholder="Designation" value="" required>
+									</div>
+								</div>
+								<div class="form-group row">
+									<div class="col-sm-3 dropdown-container position-relative">
+										<select name="job_form" id="j_form" class="form-control">
+											<option value="job form">Job Form</option>
+										</select>
+									</div>
+									<div class="col-sm-3 dropdown-container position-relative">
+										<select name="end_on" id="endOn" class="form-control">
+											<option value="end on">End On</option>
+										</select>
+									</div>
+									<div class="col-sm-6 dropdown-container position-relative">
+										<select name="location" id="location" class="form-control">
+											<option value="location">Loaction</option>
+											<option value="newyork">New York</option>
+											<option value="losangeles">Los Angeles</option>
+											<option value="shicago">Shicago</option>
+											<option value="uniteskingdom">United Kingdom</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<textarea class="form-control" rows="10" name="aboutcompany"
+										placeholder="About Company" required></textarea>
+									<h6 class="btn btn-link text-decoration-none text-red pt-2">Add Experince</h6>
+								</div>
+							</div>
+							<!-- /. Experince -->
+
+							<h3>Protfolio
+								<span class="float-end">
+									<a href="javascript:void(0);" class="btn btn-danger">
+										<i class="fa fa-edit me-2" aria-hidden="true"></i> Edit
+									</a>
+								</span>
+							</h3>
+
+							<div class="pt-5 pb-3">
+								<div class="form-group row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<input type="text" name="projectname" id="projectName" class="form-control"
+												placeholder="Project Name" value="" required>
+										</div>
+										<div class="form-group row">
+											<div class="col-sm-6 dropdown-container position-relative">
+												<select name="start_form" id="startForm" class="form-control">
+													<option class="start form">Start Form</option>
+												</select>
+											</div>
+											<div class="col-sm-6 dropdown-container position-relative">
+												<select name="end_on" id="end-on" class="form-control">
+													<option class="end on">End On</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<textarea class="form-control" name="project_d" rows="4"
+											placeholder="Project Description" required></textarea>
+									</div>
+								</div>
+								<div class="form-group pb-5">
+									<div class="file">
+										<label class="upload form-control">
+											<input name="Image" id="uploadFile" type="file">
+										</label>
+										<h6 class="btn btn-link text-decoration-none text-red pt-2">Add Other</h6>
+									</div>
+								</div>
+								<div class="d-grid">
+									<input type="submit" name="submit" class="btn btn-danger rounded-0" id="update"
+										value="Update & Save">
+								</div>
+							</div>
+						</form>
+						<!-- /. Protfolio -->
+					</div>
+				</div>
+			</div>
+		</div>
+		{{form.user_protfolio}}
+		{{form.empolyer_role}}
+		{{form.user_address}}
+		<video width="320px" height="240px" controls >
+			<source src="{{user.short_reel.url}}" type="video/mp4" >
+		</video>
+	</section>
+
+	<!-- /. profileMain -->
+
+	{% endblock content %}
+
+	{% block js_block %}
+	<script src="{% static 'site/js/script.js'%}"></script>
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="{% static 'site/assets/js/common.js' %}"></script>
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+	{% endblock js_block %}

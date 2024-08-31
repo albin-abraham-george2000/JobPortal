@@ -1,0 +1,82 @@
+{% extends 'core/template/layout.html' %}
+{% load static %}
+
+{% block title %}
+Login
+{% endblock title%}
+
+{% block content %}
+<section class="nearJob">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-5 nearcol">
+				<h1>Your dream Job</h1>
+				<h2 class="text-red">Is Near to You</h2>
+			</div>
+			<div class="col-sm-7 d-none d-md-block">
+				<div class="row">
+					<div class="d-flex w-100">
+						<img class="w-100" src="{% static 'site/images/contact-us/banner.png' %}" alt="Banner">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- /. nearJob -->
+
+<section class="loginForm">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 mx-auto">	
+				<form method="post">
+					{% csrf_token %}
+					<h3 class="text-center">LOGIN</h3>
+					<div class="latestForm">
+						{% include "component/formfield.html" with field=form.email %}
+						{% include "component/formfield.html" with field=form.password %}
+					</div> 
+					<!-- /. latestForm -->
+					<!-- 2 column grid layout for inline styling -->
+					<div class="row my-4">
+						<div class="col d-flex justify-content-left">
+							<!-- Checkbox -->
+							<div class="checkbox m-0">
+								<input type="checkbox" name="savepassword" class="form-check-input" id="savePwd" checked required>
+								<label class="form-check-label p-1" for="savePwd">Save Password</label>
+							</div>
+						</div>
+
+						<div class="col text-end">
+						  <!-- Simple link -->
+						 <a class="forgotPwd text-warning" href="{% url 'auth_users:forgot_password' %}">Forgot password?</a> 
+						</div>
+					</div>
+
+					<!-- Submit button -->
+					<div class="d-grid">
+					<input type="submit" name="submit" class="btn btn-danger" id="login" value="LOGIN">
+					</div>
+					<!-- Register buttons -->
+					<div class="text-center">
+						<p>Have't Any Account Yet? <a class="clickHere" href="{% url 'auth_users:register' %}">Click Here</a></p>
+						<p>or</p>
+						<p>Login With Social</p>
+						<a href="javascript:void(0);" class="btn btn-danger btn-floating rounded-pill mx-2">
+						  <i class="fa fa-google me-1"></i> Google
+						</a>
+						<a href="javascript:void(0);" class="btn btn-primary rounded-pill btn-floating mx-2">
+						  <i class="fa fa-facebook me-1"></i> Facebook
+						</a>
+						<a href="javascript:void(0);" class="btn btn-info rounded-pill btn-floating text-white mx-2">
+						  <i class="fa fa-twitter me-1"></i> Twitter
+						</a>
+					</div>
+				</form>			
+			</div>
+		</div>
+	</div>
+</section>
+<!-- /. contactForm -->
+
+{% endblock content %}
